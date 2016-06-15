@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Plantilla cabecera web Arduino, por Sebastián Pavez.
+-->
+<?php 
+session_start();
+?>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>Proyecto Arduino</title>
+		<link rel="stylesheet" type="text/css" href="./css/estilo.css">
+		<link rel="icon" type="image/png" href="./imgs/favicon.ico">
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>			
+	</head>
+	<body id="cuerpo" class="home">
+		<header id="banner" class="body">
+			<h1><a href="index.php">Proyecto Arduino <br><strong>Blog de arduino en el año <del>2077</del> <ins>2016</ins></strong></a></h1>
+ 
+			<nav>
+				<ul>
+					<li><a id="lnkInicio" href="index.php">Inicio</a></li>
+					<li><a id="lnkProyecto" href="proyectos.php">Proyectos</a></li>	
+					<li><a id="lnkTuto" href="videosTuto.php">VideoTutoriales</a></li>
+					                                     
+                                        <li>
+                                            <?php 
+                                            if(isset($_SESSION['nick'])){
+                                                echo "<a href='logout.php'> Cerrar sesión </a>";                                                
+                                            }else{
+                                                echo "<a href='login.php'> Iniciar sesión </a>";                                                
+                                            }
+                                            ?>
+                                        </li>                                        
+				</ul>
+			</nav>
+		</header>
+		<section class="body">
+			<img id="headerImg" alt='robo_banner' src="./imgs/header_img.jpg">
+		</section>
+		
+		<article id="content" class="body">
+
+                    
